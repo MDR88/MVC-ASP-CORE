@@ -36,6 +36,8 @@ namespace MvcMovie
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            //This code shows the movie database context being added to the Dependency Injection container
+            //The code directly below specifies the database to use "MvcMovieContext" and the connection string. => is a lambda operator.
             services.AddDbContext<MvcMovieContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("MvcMovieContext")));
         }
